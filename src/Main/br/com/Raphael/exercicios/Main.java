@@ -1,17 +1,31 @@
 package Main.br.com.Raphael.exercicios;
 
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
-        Carro meuCarro = new Carro();
-        meuCarro.marca = "Fiat";
-        meuCarro.modelo = "Uno";
-        meuCarro.ano = 2020;
+        Carro meuCarro1 = new Carro();
+        meuCarro1.marca = "Fiat";
+        meuCarro1.modelo = "Uno";
+        meuCarro1.ano = 2012;
 
-        // Este método apenas executa a ação de imprimir.
-        meuCarro.exibir();
+        Carro meuCarro2 = new Carro();
+        meuCarro2.marca = "Honda";
+        meuCarro2.modelo = "HRV";
+        meuCarro2.ano = 2025;
 
-        //Este método DEVOLVE um valor, que guardamos na variável 'idade'.
-        int idade = meuCarro.idadeDoCarro();
-        System.out.println("Idade do carro: " + idade + " anos.");
+        Carro meuCarro3 = new Carro();
+        meuCarro3.marca = "BMW";
+        meuCarro3.modelo = "320i";
+        meuCarro3.ano = 2026;
+
+        ArrayList<Carro>listaCarros = new ArrayList<>();
+        listaCarros.add(meuCarro1);
+        listaCarros.add(meuCarro2);
+        listaCarros.add(meuCarro3);
+        System.out.println("--- Imprimindo a lista com for-each ---");
+        for (Carro carroDaVez : listaCarros) {
+            carroDaVez.exibir();
     }
+  }
 }
