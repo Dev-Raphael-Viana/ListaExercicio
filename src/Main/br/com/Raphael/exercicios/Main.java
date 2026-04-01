@@ -2,18 +2,16 @@ package Main.br.com.Raphael.exercicios;
 
 public class Main {
     public static void main(String[] args) {
-        Carro carro1 = new Carro();
-        carro1.marca = "Toyota";
-        carro1.modelo = "Corolla";
-        carro1.ano = 2022;
+        Carro meuCarro = new Carro();
+        meuCarro.marca = "Fiat";
+        meuCarro.modelo = "Uno";
+        meuCarro.ano = 2020;
 
-        Carro carro2 = new Carro();
-        carro2.marca = "Honda";
-        carro2.modelo = "Civic";
-        carro2.ano = 2023;
+        // Este método apenas executa a ação de imprimir.
+        meuCarro.exibir();
 
-        System.out.println("Carro 1: " + carro1.marca + " " + carro1.modelo + " " + carro1.ano);
-        System.out.println("Carro 2: " + carro2.marca + " " + carro2.modelo + " " + carro2.ano);
+        //Este método DEVOLVE um valor, que guardamos na variável 'idade'.
+        int idade = meuCarro.idadeDoCarro();
+        System.out.println("Idade do carro: " + idade + " anos.");
     }
 }
-
