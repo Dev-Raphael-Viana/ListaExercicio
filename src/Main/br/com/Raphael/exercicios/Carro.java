@@ -5,6 +5,12 @@ public class Carro {
     private String modelo;
     private int ano;
 
+    public Carro(String marca, String modelo, int ano) {
+        this.marca = marca;
+        this.modelo = modelo;
+        this.setAno(ano); // chamei o setter para aproveitar o if de validação
+    }
+
     public String getMarca() {
         return marca;
     }
@@ -26,12 +32,12 @@ public class Carro {
     }
 
     public void setAno(int ano) {
-        if (ano < 1886 || ano > 2026){
-            // coloquei para mostrar qual carro esta com ano inválido
-            System.out.println("Erro: O ano " + ano + " é inválido para o carro. Marca: " + this.marca + " - modelo: " + this.modelo);
-        } else {
-            this.ano = ano;
-        }
+       if (ano < 1886 || ano > 2026){
+           // coloquei para mostrar qual carro esta com ano inválido
+           System.out.println("Erro: O ano " + ano + " é inválido para o carro. Marca: " + this.marca + " - modelo: " + this.modelo);
+       } else {
+          this.ano = ano;
+       }
     }
 
     public void exibir() {
