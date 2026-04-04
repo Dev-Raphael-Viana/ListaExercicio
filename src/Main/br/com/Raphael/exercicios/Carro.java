@@ -7,6 +7,8 @@ public class Carro {
 
     public static int totalCarros = 0;
 
+    public static final int AnoPrimeiroCarro = 1886;
+
     public Carro(String marca, String modelo, int ano) {
         this.marca = marca;
         this.modelo = modelo;
@@ -41,7 +43,7 @@ public class Carro {
     }
 
     public void setAno(int ano) {
-       if (ano < 1886 || ano > 2026){
+       if (ano < AnoPrimeiroCarro || ano > 2026){
            // coloquei para mostrar qual carro esta com ano inválido
            System.out.println("Erro: O ano " + ano + " é inválido para o carro. Marca: " + this.marca + " - modelo: " + this.modelo);
        } else {

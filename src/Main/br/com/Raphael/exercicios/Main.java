@@ -25,13 +25,13 @@ public class Main {
         Carro.imprimirTotal();
 
         /*
-         * RESPOSTA DO EXERCÍCIO 8c:
-         * Por que um método estático não pode acessar atributos de instância (como 'modelo')?
-         * Porque o método estático pertence à classe (fábrica) e pode ser chamado mesmo
-         * se nenhum carro tiver sido criado. A fábrica não sabe de qual carro está
-         * pedindo o modelo, pois modelo só existe na memória quando instanciamos um
-         * objeto específico.
+         * RESPOSTA DO EXERCÍCIO 9:
+         * O modificador 'final' transforma a variável em uma CONSTANTE.
+         * Isso significa que, uma vez que o valor (1886) é atribuído, ele não pode
+         * mais ser alterado em nenhum outro lugar do código. Se alguém tentar
+         * fazer 'Carro.AnoPrimeiroCarro = 1900;', o Java dará um erro de compilação.
          */
+
 
   }
 }
