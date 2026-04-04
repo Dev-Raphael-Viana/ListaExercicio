@@ -1,38 +1,67 @@
 package Main.br.com.Raphael.exercicios;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Carro meuCarro1 = new Carro("Fiat", "Uno", 1600);
-        Carro meuCarro2 = new Carro("Honda", "HRV", 2025);
-        Carro meuCarro3 = new Carro("BMW", "320i", 2026);
-        Carro meuCarro4 = new Carro();
-        Carro meuCarro5 = new Carro("Toyota", "Corolla", 2023);
-
+        Scanner scanner = new Scanner(System.in);
         ArrayList<Carro> listaCarros = new ArrayList<>();
-        listaCarros.add(meuCarro1);
-        listaCarros.add(meuCarro2);
-        listaCarros.add(meuCarro3);
-        listaCarros.add(meuCarro4);
-        listaCarros.add(meuCarro5);
+        int opcao = 0;
 
-        System.out.println("--- Imprimindo a lista com for-each ---");
-        for (Carro carroDaVez : listaCarros) {
-            carroDaVez.exibir();
+        System.out.println("=== BEM-VINDO AO SISTEMA DE CONCESSIONÁRIA ===");
+
+        while (opcao != 4) {
+            System.out.println("\nMenu:");
+            System.out.println("1) Cadastrar Carro");
+            System.out.println("2) Listar todos");
+            System.out.println("3) Total cadastrado");
+            System.out.println("4) Sair");
+            System.out.print("Escolha uma opção: ");
+            opcao = scanner.nextInt();
+            scanner.nextLine();
+
+            switch (opcao) {
+                case 1:
+                    System.out.println("\n--- Novo Cadastro ---");
+                    System.out.print("Digite a marca: ");
+                    String marca = scanner.nextLine();
+
+                    System.out.print("Digite o modelo: ");
+                    String modelo = scanner.nextLine();
+
+                    System.out.print("Digite o ano de fabricação: ");
+                    int ano = scanner.nextInt();
+
+                    Carro novoCarro = new Carro(marca, modelo, ano);
+                    listaCarros.add(novoCarro);
+                    System.out.println("Carro cadastrado com sucesso!");
+                    break;
+
+                case 2:
+                    System.out.println("--- Lista de Carros ---");
+                    if (listaCarros.isEmpty()) {
+                        System.out.println("Nenhum carro cadastrado no sistema ainda.");
+                    } else {
+                        for (Carro c : listaCarros) {
+                            c.exibir();
+                        }
+                    }
+                    break;
+
+                case 3:
+                    System.out.println("--- Relatório ---");
+                    System.out.println("Total de carros Cadastrado " + Carro.totalCarros);
+                    break;
+
+                case 4:
+                    System.out.println("Encerrando o sistema... Até a próxima!");
+                    break;
+
+                default:
+                    System.out.println("Opção inválida! Tente novamente.");
+            }
         }
-        System.out.println("\n--- Total de Carros na Fábrica ---");
-        Carro.imprimirTotal();
-
-        System.out.println("\n--- Exercício 14: Sobrecarga na classe Cliente ---");
-
-        Cliente cliente1 = new Cliente("Raphael", "raphael@email.com", "99999-1111");
-        Cliente cliente2 = new Cliente("Jaqueline", "Jaqueline@email.com");
-        Cliente cliente3 = new Cliente("João");
-        cliente1.exibir();
-        cliente2.exibir();
-        cliente3.exibir();
-        System.out.println("Total de clientes cadastrados: " + Cliente.totalClientes);
-
+        scanner.close();
     }
 }
