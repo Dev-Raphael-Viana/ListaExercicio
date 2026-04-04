@@ -10,7 +10,7 @@ public class Main {
         Carro meuCarro4 = new Carro();
         Carro meuCarro5 = new Carro("Toyota", "Corolla", 2023);
 
-        ArrayList<Carro>listaCarros = new ArrayList<>();
+        ArrayList<Carro> listaCarros = new ArrayList<>();
         listaCarros.add(meuCarro1);
         listaCarros.add(meuCarro2);
         listaCarros.add(meuCarro3);
@@ -20,18 +20,29 @@ public class Main {
         System.out.println("--- Imprimindo a lista com for-each ---");
         for (Carro carroDaVez : listaCarros) {
             carroDaVez.exibir();
-    }
+        }
         System.out.println("\n--- Total de Carros na Fábrica ---");
         Carro.imprimirTotal();
 
-        /*
-         * RESPOSTA DO EXERCÍCIO 9:
-         * O modificador 'final' transforma a variável em uma CONSTANTE.
-         * Isso significa que, uma vez que o valor (1886) é atribuído, ele não pode
-         * mais ser alterado em nenhum outro lugar do código. Se alguém tentar
-         * fazer 'Carro.AnoPrimeiroCarro = 1900;', o Java dará um erro de compilação.
+        System.out.println("\n--- Exercício 10: Escopo de Variável ---");
+
+        //RESPOSTA DO EXERCÍCIO 10
+        // a) Da erro de compilação.
+        // b) Corrigindo o código: declaramos a variável FORA do if!
+
+        int x;
+        if (true) {
+            x = 10; // Aqui dentro, apenas atribui o valor
+        }
+        System.out.println(x);
+
+        /* c):
+         * C1 - O que é escopo? Escopo é a região do código onde uma variável "vive" e pode ser acessada.
+         * No Java, o escopo é definido pelas chaves { }.
+         * C2 - Por que a variável 'x' não existia fora do if? Porque no código original,
+         * a variável foi criada (declarada com 'int') DENTRO do bloco do if. Assim que
+         * o bloco if terminou (na chave de fechamento '}'), a variável 'x' "morreu"
+         * (foi destruída da memória). Para ela existir fora, ela precisa nascer fora!
          */
-
-
-  }
+    }
 }
