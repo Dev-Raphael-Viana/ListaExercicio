@@ -23,5 +23,13 @@ public class Main {
     }
         System.out.println("\n--- Total de Carros na Fábrica ---");
         System.out.println("Total: " + Carro.totalCarros);
+
+        /*
+         * RESPOSTA DO EXERCÍCIO 7:
+         * Acessamos o total usando o nome da classe 'Carro.totalCarros' porque
+         * atributos 'static' pertencem à CLASSE como um todo, e não a um objeto
+         * específico. A diferença é que os atributos de instância (como marca)
+         * são únicos para cada carro, enquanto o estático é compartilhado por todos.
+         */
   }
-}
+}git
