@@ -86,5 +86,27 @@ public class Main {
          * Ao fazer 'c2 = c1', copiamos a linha imaginária, então as duas variáveis na Stack
          * apontam para o mesmo objeto na Heap.
          */
+
+        System.out.println("\n--- Exercício 13: Passagem de Objeto para Método ---");
+
+        // Mudei o nome para 'meuCarroEx13' apenas para não dar conflito com os carros lá de cima
+        Carro meuCarro13 = new Carro("VW", "Gol", 2015);
+        trocarModelo(meuCarro13);
+        System.out.println(meuCarro13.getModelo());
+
+        /*
+         * RESPOSTA DO EXERCÍCIO 13:
+         * a) O que é impresso? É impresso "Fusca".
+         * b) Por que a mudança afetou o objeto original? O parâmetro c aponta para onde?
+         * Isso é a continuação prática da lógica de Stack e Heap do Exercício 12.
+         * Quando passo a variável para o método 'trocarModelo(meuCarro13)', o Java
+         * não cria um clone do carro inteiro. Ele copia apenas o ENDEREÇO (a referência).
+         * Portanto, o parâmetro 'c' lá do método recebe esse endereço e aponta exatamente
+         * para o MESMO carro na memória Heap. Ao fazer 'c.setModelo("Fusca")', o método
+         * altera a peça do carro original.
+         */
+    }
+    public static void trocarModelo(Carro c) {
+        c.setModelo("Fusca");
     }
 }
