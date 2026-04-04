@@ -55,5 +55,9 @@ public class Carro {
     public int idadeDoCarro() {
         return 2026 - ano;
     }
+
+    public static void imprimirTotal() {
+        System.out.println("Total de carros na fábrica: " + totalCarros);
+    }
 }
 

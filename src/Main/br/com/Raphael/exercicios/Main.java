@@ -22,14 +22,16 @@ public class Main {
             carroDaVez.exibir();
     }
         System.out.println("\n--- Total de Carros na Fábrica ---");
-        System.out.println("Total: " + Carro.totalCarros);
+        Carro.imprimirTotal();
 
         /*
-         * RESPOSTA DO EXERCÍCIO 7:
-         * Acessamos o total usando o nome da classe 'Carro.totalCarros' porque
-         * atributos 'static' pertencem à CLASSE como um todo, e não a um objeto
-         * específico. A diferença é que os atributos de instância (como marca)
-         * são únicos para cada carro, enquanto o estático é compartilhado por todos.
+         * RESPOSTA DO EXERCÍCIO 8c:
+         * Por que um método estático não pode acessar atributos de instância (como 'modelo')?
+         * Porque o método estático pertence à classe (fábrica) e pode ser chamado mesmo
+         * se nenhum carro tiver sido criado. A fábrica não sabe de qual carro está
+         * pedindo o modelo, pois modelo só existe na memória quando instanciamos um
+         * objeto específico.
          */
+
   }
-}git
+}
