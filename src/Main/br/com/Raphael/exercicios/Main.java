@@ -61,5 +61,30 @@ public class Main {
          * gaveta do 'b'. A partir desse momento, eles não têm mais nenhuma ligação.
          * Mudar a gaveta do 'b' para 99 não afeta a gaveta do 'a'.
          */
+
+        System.out.println("\n--- Exercício 12: Referência vs Valor (Objeto) ---");
+
+        Carro c1 = new Carro("Fiat", "Uno", 1600);
+        Carro c2 = c1;
+        c2.setModelo("Palio");
+        System.out.println("Modelo de c1 = " + c1.getModelo());
+        System.out.println("Modelo de c2 = " + c2.getModelo());
+
+        /*
+         * RESPOSTA DO EXERCÍCIO 12:
+         * a) Qual o modelo de c1 e de c2? Ambos vão imprimir "Palio".
+         * b) Por que alterar c2 mudou c1? O que c1 e c2 compartilham? Porque c1 e c2 não "guardam" o carro de verdade
+         * dentro deles, eles guardam apenas o ENDEREÇO (referência) do carro na memória. Quando fiz 'c2 = c1', copiei
+         * apenas esse endereço. É como se eu tivesse dois controles remotos (c1 e c2)
+         * apontando para a MESMA televisão (o mesmo objeto Carro). Se um controle muda de canal, o outro vê a mudança.
+         * c) Diferença do Ex 11 (int) para este (Carro) usando Stack e Heap: No Java, existem duas áreas de memória principais: a STACK e a HEAP.
+         * - No Ex 11 (tipos primitivos): Os números simples (int) são pequenos e guardados
+         * diretamente na memória STACK. 'b = a' cria gavetas separadas na Stack.
+         * - Neste Ex 12 (objetos): Objetos grandes e complexos são criados na memória HEAP.
+         * As variáveis 'c1' e 'c2' ficam na STACK, mas o valor que elas guardam é apenas
+         * um PONTEIRO (uma linha imaginária) apontando para o objeto Carro lá na HEAP.
+         * Ao fazer 'c2 = c1', copiamos a linha imaginária, então as duas variáveis na Stack
+         * apontam para o mesmo objeto na Heap.
+         */
     }
 }
