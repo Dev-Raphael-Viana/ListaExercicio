@@ -5,15 +5,19 @@ public class Carro {
     private String modelo;
     private int ano;
 
+    public static int totalCarros = 0;
+
     public Carro(String marca, String modelo, int ano) {
         this.marca = marca;
         this.modelo = modelo;
         this.setAno(ano); // chamei o setter para aproveitar o if de validação
+        totalCarros++;
     }
     public Carro() {
         this.marca = "Desconhecido";
         this.modelo = "Desconhecido";
         this.ano = 0;
+        totalCarros++;
     }
 
     public String getMarca() {
