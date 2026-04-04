@@ -44,5 +44,22 @@ public class Main {
          * o bloco if terminou (na chave de fechamento '}'), a variável 'x' "morreu"
          * (foi destruída da memória). Para ela existir fora, ela precisa nascer fora!
          */
+
+        System.out.println("\n--- Exercício 11: Referência vs Valor ---");
+        int a = 10;
+        int b = a;
+        b = 99;
+        System.out.println("a = " + a);
+        System.out.println("b = " + b);
+
+        /*
+         * RESPOSTA DO EXERCÍCIO 11:
+         * a) Qual o valor após a execução? O console vai imprimir: a = 10 e b = 99.
+         * b) Alterar 'b' mudou 'a'? Por quê? Não, não mudou,isso acontece porque 'int' é um tipo PRIMITIVO.
+         * Na memória do Java, variáveis primitivas guardam o valor diretamente (como gavetas separadas).
+         * Quando fiz 'b = a', o Java tirou um "xerox" do valor de 'a' (10) e guardou na
+         * gaveta do 'b'. A partir desse momento, eles não têm mais nenhuma ligação.
+         * Mudar a gaveta do 'b' para 99 não afeta a gaveta do 'a'.
+         */
     }
 }
