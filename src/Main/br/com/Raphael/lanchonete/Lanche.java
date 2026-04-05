@@ -1,4 +1,4 @@
-package Main.br.com.Raphael.lanchonete;
+package main.br.com.Raphael.lanchonete;
 
 public class Lanche {
     private String nome;

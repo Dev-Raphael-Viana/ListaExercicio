@@ -1,4 +1,4 @@
-package Main.br.com.Raphael.lanchonete;
+package main.br.com.Raphael.lanchonete;
 
 import java.util.ArrayList;
 import java.util.List;

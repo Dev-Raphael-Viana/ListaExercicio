@@ -1,4 +1,4 @@
-package Main.br.com.Raphael.exercicios;
+package main.br.com.Raphael.exercicios;
 
 public class Cliente {
     private String nome;
