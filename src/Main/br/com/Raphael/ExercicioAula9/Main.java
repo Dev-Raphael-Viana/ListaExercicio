@@ -10,9 +10,11 @@ public class Main {
     }
 }
 
-//a) O nome da classe seguido pelo caractere @ e o código hash do objeto.
-//main.br.com.Raphael.ExercicioAula9.Produto@8efb846
-//main.br.com.Raphael.ExercicioAula9.Produto@8efb846
+//a) Agora aparece os valores.
+//Produto{nome=Caneta, preco=2.5}
+//Produto{nome=Caderno, preco=15.9}
 
-//b) Não é legivel, essa informação não diz nada sobre o estado do objeto, o nome ou o preço.
-// Ela serve apenas para identificar a instância na memória.
+//b) Sim. * No System.out.println(objeto), o Java chama internamente o String.valueOf(objeto),
+// que por sua vez executa o toString().
+//Na concatenação com o operador +, o compilador entende que quero transformar tudo em texto e invoca o toString()
+//automaticamente para mim.
