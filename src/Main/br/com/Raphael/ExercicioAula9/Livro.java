@@ -19,8 +19,8 @@ class Livro {
         return this.isbn.equals(outro.isbn);
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(isbn);
-    }
+   // @Override
+   // public int hashCode() {
+    //    return Objects.hash(isbn);
+    //}
 }
