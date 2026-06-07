@@ -2,19 +2,14 @@ package main.br.com.Raphael.ExercicioAula9;
 
 public class Main {
     public static void main(String[] args) {
-        Produto p1 = new Produto("Caneta", 2.50);
-        Produto p2 = new Produto("Caderno", 15.90);
+        Livro l1 = new Livro("Clean Code", "978-0132350884");
+        Livro l2 = new Livro("Clean Code", "978-0132350884");
 
-        System.out.println(p1);
-        System.out.println(p2);
+        System.out.println(l1 == l2);
+        System.out.println(l1.equals(l2));
     }
 }
 
-//a) Agora aparece os valores.
-//Produto{nome=Caneta, preco=2.5}
-//Produto{nome=Caderno, preco=15.9}
-
-//b) Sim. * No System.out.println(objeto), o Java chama internamente o String.valueOf(objeto),
-// que por sua vez executa o toString().
-//Na concatenação com o operador +, o compilador entende que quero transformar tudo em texto e invoca o toString()
-//automaticamente para mim.
+//Porque em Java, toda classe que criamos herda implicitamente da classe mãe de todas,
+//a classe Object. Se nós não escrevermos o nosso próprio método .equals() dentro da classe Livro,
+//o Java vai usar o .equals() padrão herdado de Object.
