@@ -2,10 +2,10 @@ package main.br.com.Raphael.ExercicioAula10;
 
 public class Main {
     public static void main(String[] args) {
-        Carro carro = new Carro("Ford", 2023);
-        Moto moto = new Moto("Honda", 2025);
+        Forma circulo = new Circulo(5.0);
+        Forma retangulo = new Retangulo(4.0, 6.0);
 
-        carro.buzinar();
-        moto.buzinar();
+        System.out.println("Área do Círculo: " + circulo.calcularArea());
+        System.out.println("Área do Retângulo: " + retangulo.calcularArea());
     }
 }
