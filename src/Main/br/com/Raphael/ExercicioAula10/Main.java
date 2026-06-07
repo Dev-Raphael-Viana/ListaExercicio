@@ -2,15 +2,12 @@ package main.br.com.Raphael.ExercicioAula10;
 
 public class Main {
     public static void main(String[] args) {
-        int nota = 8;
-        Integer notaObj = nota;
+        Integer x = null;
+        int y = x;
 
-        System.out.println(nota);
-        System.out.println(notaObj);
-        System.out.println(notaObj.getClass().getSimpleName());
+        System.out.println(y);
     }
 }
 
-//8
-//8
-//integer
+//NullPointerException. O Java tenta fazer unboxing (converter Integer para int), mas o valor e null.
+//Primitivo não aceita null.
