@@ -2,11 +2,14 @@ package main.br.com.Raphael.ExercicioAula10;
 
 public class Main {
     public static void main(String[] args) {
-        Imprimivel notaFiscal = new Nota(350.90);
-        Imprimivel relatorioMensal = new Relatorio("Uso de CPU está em 45%. Tudo estável.");
+        Triatleta atleta = new Triatleta("Alison");
+        Peixe peixe = new Peixe("Palhaço");
 
-        notaFiscal.imprimir();
-        System.out.println();
-        relatorioMensal.imprimir();
+        System.out.println("--- Testando o Triatleta ---");
+        atleta.nadar();
+        atleta.correr();
+
+        System.out.println("\n--- Testando o Peixe ---");
+        peixe.nadar();
     }
 }
