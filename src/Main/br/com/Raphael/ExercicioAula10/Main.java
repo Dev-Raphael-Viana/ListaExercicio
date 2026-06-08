@@ -1,19 +1,18 @@
 package main.br.com.Raphael.ExercicioAula10;
 
-import java.util.ArrayList;
-
 public class Main {
+    public static void imprimirDocumento(Imprimivel doc) {
+        doc.imprimir();
+    }
+
     public static void main(String[] args) {
-        ArrayList<Animal> listaAnimais = new ArrayList<>();
-        listaAnimais.add(new Cachorro("Ozzy"));
-        listaAnimais.add(new Gato("Dell"));
-        listaAnimais.add(new Leao("Maya"));
-        listaAnimais.add(new Coruja("Janja"));
+        Nota nota = new Nota(150.00);
+        Relatorio relatorio = new Relatorio("Backup concluído com sucesso.");
 
-        System.out.println("--- Percorrendo a lista com for-each ---");
+        System.out.println("Chamando o método estático para a Nota:");
+        imprimirDocumento(nota);
 
-        for (Animal animal : listaAnimais) {
-            animal.emitirSom();
-        }
+        System.out.println("\nChamando o método estático para o Relatório:");
+        imprimirDocumento(relatorio);
     }
 }
