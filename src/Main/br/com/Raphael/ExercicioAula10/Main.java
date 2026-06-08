@@ -1,18 +1,18 @@
 package main.br.com.Raphael.ExercicioAula10;
 
+import java.util.ArrayList;
+
 public class Main {
-    public static void imprimirDocumento(Imprimivel doc) {
-        doc.imprimir();
-    }
-
     public static void main(String[] args) {
-        Nota nota = new Nota(150.00);
-        Relatorio relatorio = new Relatorio("Backup concluído com sucesso.");
+        ArrayList<Forma> listaFormas = new ArrayList<>();
+        listaFormas.add(new Circulo(3.0));
+        listaFormas.add(new Retangulo(5.0, 4.0));
+        listaFormas.add(new Circulo(1.5));
 
-        System.out.println("Chamando o método estático para a Nota:");
-        imprimirDocumento(nota);
+        System.out.println("--- Calculando áreas em lote ---");
 
-        System.out.println("\nChamando o método estático para o Relatório:");
-        imprimirDocumento(relatorio);
+        for (Forma f : listaFormas) {
+            System.out.printf("Área:%.2f%n" , f.calcularArea());
+        }
     }
 }
