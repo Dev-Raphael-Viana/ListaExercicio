@@ -1,14 +1,19 @@
 package main.br.com.Raphael.ExercicioAula10;
 
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
+        ArrayList<Animal> listaAnimais = new ArrayList<>();
+        listaAnimais.add(new Cachorro("Ozzy"));
+        listaAnimais.add(new Gato("Dell"));
+        listaAnimais.add(new Leao("Maya"));
+        listaAnimais.add(new Coruja("Janja"));
 
-        Animal a1 = new Cachorro("Ozzy");
-        Animal a2 = new Gato("Dell");
-        Animal a3 = new Cachorro("Maya");
+        System.out.println("--- Percorrendo a lista com for-each ---");
 
-        a1.emitirSom();
-        a2.emitirSom();
-        a3.emitirSom();
+        for (Animal animal : listaAnimais) {
+            animal.emitirSom();
+        }
     }
 }
